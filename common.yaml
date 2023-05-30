@@ -1,0 +1,28 @@
+version: "2.1"
+services:
+    odoo:
+        image: $ODOO_IMAGE:$ODOO_MINOR
+        build:
+            context: ./odoo
+            args:
+                ODOO_VERSION: $ODOO_MINOR
+        environment:
+            ADMIN_PASSWORD: "$ODOO_ADMIN_PASSWORD"
+            PGPASSWORD: "$DB_PASSWORD"
+            PGUSER: "$DB_USER"
+            PROXY_MODE: "$ODOO_PROXY_MODE"
+        tty: true
+        volumes:
+            - filestore:/var/lib/odoo:z
+
+    db:
+        image: postgres:${DB_VERSION}-alpine
+        environment:
+            POSTGRES_USER: "$DB_USER"
+            POSTGRES_PASSWORD: "$DB_PASSWORD"
+        volumes:
+            - db:/var/lib/postgresql/data:z
+        command:
+            - postgres
+            - --shared_preload_libraries=pg_stat_statements
+            - --pg_stat_statements.track=all

@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os
+
+
+extra_folders = os.getenv("EXTRA_FOLDERS")
+if extra_folders == 'true':
+
+    extra_addons = "/home/extra-addons"
+    auto = "/opt/odoo/auto/addons"
+    for addon in os.listdir(extra_addons):
+        if os.path.isdir(os.path.join(extra_addons,addon)) and addon != '.git':
+            src = (os.path.join(extra_addons, addon))
+            dst = os.path.join(auto, addon)
+            if not os.path.exists(dst):
+                os.symlink(src, dst)

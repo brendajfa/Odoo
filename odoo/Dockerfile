@@ -1,0 +1,4 @@
+ARG ODOO_VERSION
+FROM tecnativa/doodba:15.0-onbuild
+ENV ODOO_VERSION="15.0"
+ENV LIST_DB=true

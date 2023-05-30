@@ -1,0 +1,3 @@
+checksumdir
+unicodecsv
+unidecode

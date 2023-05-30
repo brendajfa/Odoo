@@ -1,0 +1,42 @@
+version: "2.1"
+services:
+    odoo:
+        extends:
+            file: common.yaml
+            service: odoo
+        build:
+            args:
+                AGGREGATE: "false"
+                PIP_INSTALL_ODOO: "false"
+                CLEAN: "false"
+                COMPILE: "false"
+                LOG_LEVEL: "DEBUG"
+        restart: unless-stopped
+        ports:
+            - "127.0.0.1:15069:8069"
+        depends_on:
+            - db
+        environment:
+            ADMIN_PASSWORD: admin
+            PGDATABASE: template
+            PYTHONOPTIMIZE: ""
+
+        volumes:
+            - ./odoo/custom:/opt/odoo/custom:ro,z
+            - ./odoo/auto/addons:/opt/odoo/auto/addons:rw,z
+
+        command:
+            - odoo
+            - --workers=0
+            - --limit-time-cpu=1800
+            - --limit-time-real=3600
+
+    db:
+        extends:
+            file: common.yaml
+            service: db
+        restart: unless-stopped
+
+volumes:
+    filestore:
+    db:

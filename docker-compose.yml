@@ -1,0 +1,78 @@
+version: "2.1"
+
+services:
+    odoo_proxy:
+        image: tecnativa/whitelist
+        depends_on:
+            - odoo
+        networks: &public
+            default:
+            public:
+        ports:
+            - "127.0.0.1:15069:8069"
+        environment:
+            PORT: 8069
+            TARGET: odoo
+
+    db_proxy:
+        image: tecnativa/whitelist
+        depends_on:
+            - db
+        networks:
+            default:
+            public:
+        ports:
+            - "127.0.0.1:5433:5433"
+        environment:
+            PORT: 5433
+            TARGET: db
+
+    odoo:
+        extends:
+            file: common.yaml
+            service: odoo
+        build:
+            args:
+                AGGREGATE: "false"
+                PIP_INSTALL_ODOO: "false"
+                CLEAN: "false"
+                COMPILE: "false"
+        environment:
+            ADMIN_PASSWORD: admin
+            PGDATABASE: template
+            PYTHONOPTIMIZE: ""
+            SMTP_PORT: "1025"
+            WITHOUT_DEMO: "true"
+            EXTRA_FOLDERS: "false"
+        volumes:
+            - ./odoo/custom:/opt/odoo/custom:ro,z
+            - ./odoo/auto/addons:/opt/odoo/auto/addons:rw,z
+            #- /path/carpeta/OCA:/home/extra-addons
+        depends_on:
+            - db
+           # - wdb
+        command:
+            - odoo
+            - --workers=0
+            - --limit-time-cpu=1800
+            - --limit-time-real=3600
+
+    db:
+        extends:
+            file: common.yaml
+            service: db
+
+  #  wdb:
+  #      image: yajo/wdb-server
+  #      networks: *public
+  #      ports:
+  #          - "127.0.0.1:1984:1984"
+
+networks:
+    default:
+        internal: true
+    public:
+
+volumes:
+    filestore:
+    db:
