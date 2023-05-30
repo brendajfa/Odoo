@@ -6,14 +6,14 @@
     'description': '',
     'summary': 'registra los cursos de formación',
     'author': 'QubiQ',
-    'website': 'www.qubiq.es',
+    'website': 'https://www.qubiq.es',
     'license': 'AGPL-3',#'LGPL-3',
     'category': 'Base',
     'depends': [
         ''
     ],
     'data': [
-        ''
+        'views/cursos_formacion.xml'
     ],
     'demo': [
         ''
