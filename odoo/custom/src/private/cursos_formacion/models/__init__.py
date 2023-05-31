@@ -1,2 +1,2 @@
 from . import cursos_formacion
-from . import new_model
+from . import cursos_new_model
