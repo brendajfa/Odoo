@@ -13,8 +13,8 @@
     #     ''
     # ],
     'data': [
-        'views/cursos_formacion.xml'#,
-        # 'security/ir.model.access.csv'
+        'views/cursos_formacion.xml',
+        'security/ir.model.access.csv'
     ],
     # 'demo': [
     #     ''

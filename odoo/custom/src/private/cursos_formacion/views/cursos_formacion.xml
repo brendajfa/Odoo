@@ -57,7 +57,7 @@
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="cursos_formacion_menu_act" name="Cursos Fomación" action="cursos_function_action"
+    <menuitem id="cursos_formacion_menu_act" name="Cursos Formación" action="cursos_function_action"
         sequence="10" />
 
 
