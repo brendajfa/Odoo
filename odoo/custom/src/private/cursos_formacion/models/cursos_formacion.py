@@ -2,7 +2,7 @@ from odoo  import fields, models
 
 class CursosFormacion(models.Model):
     _name = 'cursos.formacion'
-    _description = 'Modelo para reg'
+    _description = 'Modelo para registrar cursos'
 
     name = fields.Char()
     price = fields.Float()

@@ -1,21 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- cursos.formación form view -->
+    <record id="cursos_formacion_view_form" model="ir.ui.view">
+        <field name="name">cursos.formacion.view.form</field>
+        <field name="model">cursos.formacion</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="price" />
+                            <field name="date" />
+                        </group>
+
+                        <group>
+                            <field name="course_type" />
+                            <field name="adress" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- cursos.formación tree view -->
+    <record id="cursos_formacion_view_tree" model="ir.ui.view">
+        <field name="name">cursos.formacion.view.tree</field>
+        <field name="model">cursos.formacion</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="price" />
+                <field name="date" />
+                <field name="course_type" />
+                <field name="adress" />
+            </tree>
+        </field>
+    </record>
+
     <record id="cursos_function_action" model="ir.actions.act_window">
         <field name="name">Cursos de Fomación</field>
+        <field name="type">ir.actions.act_window</field>
         <field name="res_model">cursos.formacion</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
             <p class="oe_view_nocontent_create">
-            Empieza creando un curso
-            </p><p>
-                <!-- More details about what a user can do with this object will be OK --> 
-            
+                Empieza creando un curso
+            </p>
+            <p>
+                <!-- More details about what a user can do with this object will be OK -->
+
             </p>
         </field>
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
-    <menuitem id="cursos_formacion_menu_act" name="Cursos Fomación" action="cursos_function_action" sequence="10"/>
+    <menuitem id="cursos_formacion_menu_act" name="Cursos Fomación" action="cursos_function_action"
+        sequence="10" />
 
-    
+
 </odoo>

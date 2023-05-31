@@ -39,7 +39,7 @@ services:
                 COMPILE: "false"
         environment:
             ADMIN_PASSWORD: admin
-            PGDATABASE: template
+            PGDATABASE: test
             PYTHONOPTIMIZE: ""
             SMTP_PORT: "1025"
             WITHOUT_DEMO: "true"
@@ -56,6 +56,7 @@ services:
             - --workers=0
             - --limit-time-cpu=1800
             - --limit-time-real=3600
+            - --dev=qweb,xml #,reload
 
     db:
         extends:

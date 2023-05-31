@@ -9,12 +9,12 @@
     'website': 'www.qubiq.es',
     'license': 'AGPL-3',#'LGPL-3',
     'category': 'Base',
-    'depends': [
-        ''
-    ],
+    # 'depends': [
+    #     ''
+    # ],
     'data': [
-        'views/cursos_formacion.xml',
-        'security/ir.model.access.csv'
+        'views/cursos_formacion.xml'#,
+        # 'security/ir.model.access.csv'
     ],
     # 'demo': [
     #     ''
