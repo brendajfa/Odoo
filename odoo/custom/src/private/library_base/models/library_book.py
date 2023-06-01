@@ -16,3 +16,6 @@ class LibraryBook(models.Model):
     purchase = fields.Boolean('Se ha comprado')
     purchase_date = fields.Datetime('Fecha de la compra')
 
+    author_id = fields.Many2one(comodel_name='library.book.author')
+
+    
