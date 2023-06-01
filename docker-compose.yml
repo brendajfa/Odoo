@@ -57,6 +57,7 @@ services:
             - --limit-time-cpu=1800
             - --limit-time-real=3600
             - --dev=qweb,xml #,reload
+            - --update=modulo_herencia
 
     db:
         extends:

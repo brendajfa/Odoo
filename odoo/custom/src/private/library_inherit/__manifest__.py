@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Library",
+    "name": "Library Herencia",
     "summary": "Library base",
     "version": "16.0.1.0.0",
     "category": "Sistema DOQ",
@@ -11,9 +11,9 @@
     "license": "AGPL-3",
     "application": True,
     "installable": True,
-    "depends": ['sale'],
+    "depends": ['sale', 'library_base'],
     "data": [
         'views/library_book.xml'
-        ,'security/ir.model.access.csv'
+        # ,'security/ir.model.access.csv'
     ],
 }

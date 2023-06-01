@@ -1,0 +1,118 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* library_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-31 12:24+0000\n"
+"PO-Revision-Date: 2023-05-31 14:26+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.3.1\n"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: library_base
+#: model:ir.model.fields.selection,name:library_base.selection__library_book__format__digital
+msgid "Digital"
+msgstr "Digital"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__edition
+msgid "Edición"
+msgstr "Edición"
+
+#. module: library_base
+#: model_terms:ir.actions.act_window,help:library_base.library_base_action
+msgid "Empieza creando un libro"
+msgstr "Empieza a crear un libro"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__web
+msgid "Enlace web de compra"
+msgstr "Enlace web de compra"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__purchase_date
+msgid "Fecha de la compra"
+msgstr "Date of purchase"
+
+#. module: library_base
+#: model:ir.model.fields.selection,name:library_base.selection__library_book__format__fisic
+msgid "Físico"
+msgstr "Físico"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__format
+msgid "Físico o Digital"
+msgstr "Físico o Digital"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__id
+msgid "ID"
+msgstr ""
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book____last_update
+msgid "Last Modified on"
+msgstr "Última modificación"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: library_base
+#: model:ir.actions.act_window,name:library_base.library_base_action
+msgid "Library Books"
+msgstr ""
+
+#. module: library_base
+#: model:ir.ui.menu,name:library_base.library_base_menu_act
+msgid "Library books"
+msgstr ""
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__name
+msgid "Nombre Libro"
+msgstr ""
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__price
+msgid "Precio"
+msgstr "Price"
+
+#. module: library_base
+#: model:ir.model.fields,field_description:library_base.field_library_book__purchase
+msgid "Se ha comprado"
+msgstr ""
+
+#. module: library_base
+#: model:ir.model,name:library_base.model_library_book
+msgid "library description"
+msgstr "escripcion de libreria"

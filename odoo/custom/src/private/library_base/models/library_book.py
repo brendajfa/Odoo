@@ -15,3 +15,4 @@ class LibraryBook(models.Model):
     web = fields.Char('Enlace web de compra')
     purchase = fields.Boolean('Se ha comprado')
     purchase_date = fields.Datetime('Fecha de la compra')
+
