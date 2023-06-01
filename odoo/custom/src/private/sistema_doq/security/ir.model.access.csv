@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_product_custom,access_product_custom,sistema_doq.model_product_custom,base.group_user,1,1,1,1
-access_product_custom_category,access_product_custom_category,sistema_doq.model_product_custom_category,base.group_user,1,1,1,1
+access_product_custom,access_product_custom,model_product_custom,base.group_user,1,1,1,1
+access_product_custom_category,access_product_custom_category,model_product_custom_category,base.group_user,1,1,1,1
+access_product_custom_line,access_product_custom_line,model_product_custom_line,base.group_user,1,1,1,1

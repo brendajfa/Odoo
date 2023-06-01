@@ -10,10 +10,39 @@
                 <sheet>
                     <group>
                         <field name="name" />
-                        <field name="category" />
+                        <!-- <field name="category_id"
+                            options="{'no_create': True}"
+                        />  -->
+                        <field name="category_id"
+                            widget="many2many_tags"
+                        />
+                        <field name="line_ids">
+                            <tree editable='bottom'>
+                                <field name="qantity" />
+                                <field name="price" />
+                            </tree>
+                        </field>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
+
+    <record id="product_custom_view_tree" model="ir.ui.view">
+        <field name="name">product.custom.view.tree</field>
+        <field name="model">product.custom</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="category_id"
+                    widget="many2many_tags"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="product_custom_menu_act" name="Sistema DOQ" action="product_custom_action"
+        sequence="10" />
+
 </odoo>

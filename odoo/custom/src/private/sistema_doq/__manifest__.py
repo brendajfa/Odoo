@@ -14,7 +14,8 @@
     # ],
     'data': [
         # 'views/cursos_formacion.xml'#,
-        # 'security/ir.model.access.csv'
+        'views/product_custom.xml',
+        'security/ir.model.access.csv'
     ],
     # 'demo': [
     #     ''
