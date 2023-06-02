@@ -11,7 +11,7 @@
                         <field name="name" />
                         <!-- <field name="book_ids"
                             widget="one2many_tags" /> -->
-
+                        <field name="genre_ids" widget="many2many_tags"/>
                         <field name="book_ids" readonly="1">
                             <tree string="Books">
                                 <field name="name" />
@@ -41,6 +41,20 @@
         </field>
     </record>
 
+    <!-- SEARCH BAR -->
+    <record id="books_author_view_search" model="ir.ui.view">
+        <field name="name">books.author.view.search</field>
+        <field name="model">books.author</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <group expand="0" string="Group By">
+                    <filter string="Genre" name="author_genre" context="{'group_by':'genre_ids'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+
     <!-- books.genre action window -->
     <record id="books_author_action" model="ir.actions.act_window">
         <field name="name">Author</field>
@@ -57,6 +71,6 @@
         </field>
     </record>
 
-    <menuitem id="books_author_menu_act" name="Author"  action="books_author_action" sequence="11" />
+    <menuitem id="books_author_menu_act" name="Author" action="books_author_action" sequence="11" />
 
 </odoo>

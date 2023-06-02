@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_library_book,access.library.book,model_library_book,base.group_user,1,1,1,1
 access_book_author,access.books.author,model_books_author,base.group_user,1,1,1,1
 access_book_genre,access.books.genre,model_books_genre,base.group_user,1,1,1,1
+access_book_dealer,access.books.dealer,model_books_dealer,base.group_user,1,1,1,1
+access_book_editorial,access.books.editorial,model_books_editorial,base.group_user,1,1,1,1

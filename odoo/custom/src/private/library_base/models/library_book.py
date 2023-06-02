@@ -12,14 +12,43 @@ class LibraryBook(models.Model):
         ('fisic', 'Físico'),
         ('digital', 'Digital')
     ], string='Físico o Digital')
-    web = fields.Char('Enlace web de compra')
+    web = fields.Char('Web')
     purchase = fields.Boolean('Se ha comprado')
-    purchase_date = fields.Datetime('Fecha de la compra')
+    purchase_date = fields.Datetime('Fecha de compra')
 
-    author_id = fields.Many2one(comodel_name='books.author')
-    genre_ids = fields.Many2many(comodel_name='books.genre', string='Genres')
+    # practica 1
+    author_id = fields.Many2one(comodel_name='books.author', string='Author ID')
+    # genre_ids = fields.Many2many(comodel_name='books.genre', string='Genres')
     
+    
+    # practica 2
+    dealer_ids = fields.One2many(comodel_name='books.dealer', inverse_name='book_id')
+    editorial_ids = fields.One2many(comodel_name='books.editorial', inverse_name='book_id')
+    genre_ids = fields.Many2many(related="author_id.genre_ids", string='Genres')
 
+   
+
+class BookDealer(models.Model):
+    _name = 'books.dealer'
+    _description = 'Book Dealer'
+
+    price_unit = fields.Float(string='Price Unit')
+    sale_unit = fields.Integer(string='Unit Sales')
+
+    book_id  = fields.Many2one(comodel_name='library.book', string='Book ID')
+
+    dealer_id = fields.Many2one(comodel_name='res.partner', string='Dealer') # WHAT? contacto
+    # SOLUCION: dealer_id = fields.Many2one(comodel_name='res.partner', string="Dealer")
+    
+class BookEditorial(models.Model):
+    _name = 'books.editorial'
+    _description = 'Book Editorial'
+
+    page_number = fields.Integer(string='Number of Pages')
+
+    book_id  = fields.Many2one(comodel_name='library.book', string='Book ID')
+
+    editorial_id = fields.Many2one(comodel_name='res.partner', string='Editorial') # WHAT? contacto
 
     
 class BookAuthor(models.Model):
@@ -29,6 +58,8 @@ class BookAuthor(models.Model):
     name = fields.Char()
 
     book_ids = fields.One2many(comodel_name='library.book', inverse_name='author_id')
+    genre_ids = fields.Many2many(comodel_name='books.genre', string='Genres')
+    
 
 
 class BookgGenre(models.Model):

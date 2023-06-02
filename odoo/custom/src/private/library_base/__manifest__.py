@@ -15,6 +15,8 @@
     "data": [
         'views/library_book.xml',
         'views/books_author.xml',
+        'views/books_genre.xml',
+        # 'views/books_dealer.xml',
         'security/ir.model.access.csv'
     ],
 }
