@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- sale.order inherit form view -->
+    <record id="view_order_form" model="ir.ui.view">
+        <field name="name">view.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <!-- Add your xpath here -->
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <!-- <field name="reservation" readonly="1" /> -->
+                <!-- <field name="reservation" invisible="1" /> -->
+                <!-- editable solo cuando el presupuesto no se haya confirmado  (DOMINIO EN ODOO) -->
+                <field name="reservation" attrs="{'readonly': [('state','!=', '')] }" />
+            </xpath>
+
+            <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+            <!-- <xpath expr="//field[@name='sale_order_template_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath> -->
+            <xpath expr="//field[@name='origin']" position="attributes">
+                <attribute name="attrs">{'readonly': [('client_order_ref','!=', False)] }</attribute>
+            </xpath>
+            <!-- <xpath expr="//field[@name='function']" position="before">
+                <field name="category_id" position="move" />
+            </xpath> -->
+
+        </field>
+    </record>
+
+
+
+    <record id="view_sales_order_filter" model="ir.ui.view">
+        <field name="name">sale.order.inherit.view.search</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="origin" />
+            </xpath>
+
+            <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
+                <filter string="Online Payment" name="payment_online"
+                    domain="[('require_payment', '=', True)]" />
+            </xpath>
+
+            <xpath expr="//filter[@name='salesperson']" position="after">
+                <filter string="Sales Team " name="sales_team" domain="[]"
+                    context="{'group_by':'team_id'}" />
+            </xpath>
+
+        </field>
+    </record>
+
+
+</odoo>
