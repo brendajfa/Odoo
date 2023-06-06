@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class LibraryBook(models.Model):
@@ -29,6 +29,16 @@ class LibraryBook(models.Model):
     genre_ids = fields.Many2many(related="author_id.genre_ids", string='Genres')
 
 
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+
+    sale_type = fields.Char(string='Tipo de venta')
+
+    @api.onchange('')
+    def _onchange_(self):
+        pass   
+    
+
 class BookDealer(models.Model):
     _name = 'books.dealer'
     _description = 'Book Dealer'
@@ -36,7 +46,8 @@ class BookDealer(models.Model):
     price_unit = fields.Float(string='Price Unit')
     sale_unit = fields.Integer(string='Unit Sales')
 
-    book_id = fields.Many2one(comodel_name='library.book', string='Book ID')
+    book_id = fields.Many2one(comodel_name='library.book',
+                              string='Book ID')
 
     dealer_id = fields.Many2one(comodel_name='res.partner', string='Dealer') # WHAT? contacto
     # SOLUCION: dealer_id = fields.Many2one(comodel_name='res.partner', string="Dealer")
