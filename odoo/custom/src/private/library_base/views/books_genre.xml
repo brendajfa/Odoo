@@ -41,6 +41,6 @@
         </field>
     </record>
 
-    <menuitem id="books_genre_menu_act" name="Genres"  action="books_genre_action" sequence="11" />
+    <!-- <menuitem id="books_genre_menu_act" name="Genres"  action="books_genre_action" sequence="11" /> -->
 
 </odoo>

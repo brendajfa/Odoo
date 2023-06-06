@@ -29,14 +29,19 @@ class LibraryBook(models.Model):
     genre_ids = fields.Many2many(related="author_id.genre_ids", string='Genres')
 
 
-class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+# class SaleOrder(models.Model):
+#     _inherit = 'sale.order'
 
-    sale_type = fields.Char(string='Tipo de venta')
+#     sale_type = fields.Char(string='Tipo de venta')
 
-    @api.onchange('')
-    def _onchange_(self):
-        pass   
+#     @api.onchange('tax_totals_json')
+#     def _onchange_tax_totals_json(self):
+#         if self.tax_totals_json > 5000:
+
+#     @api.onchange('confirme')
+#     def _onchange_confirme(self):
+#         if self.confirme:
+
     
 
 class BookDealer(models.Model):

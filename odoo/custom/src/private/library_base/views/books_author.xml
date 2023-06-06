@@ -71,6 +71,6 @@
         </field>
     </record>
 
-    <menuitem id="books_author_menu_act" name="Author" action="books_author_action" sequence="11" />
+    <!-- <menuitem id="books_author_menu_act" name="Author" action="books_author_action" sequence="11" /> -->
 
 </odoo>
